@@ -1,0 +1,14 @@
+{
+  "name": "mysqlbackup.js",
+  "version": "0.0.1",
+  "description": "A script which enables you to do a MySQL backup and optionally send it to an e-mail address.",
+  "main": "app.js",
+  "author": "Duco Winterwerp",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^0.21.0",
+    "dateformat": "^1.0.12",
+    "nodemailer": "^2.1.0",
+    "yargs": "^3.32.0"
+  }
+}

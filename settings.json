@@ -1,0 +1,17 @@
+{
+    "location":"C:\\tmp",
+    "databases":"cars4rent armyknifejs",
+    "db_user": "root",
+    "db_pass": "geheim",
+    "zip_backup": true,
+    "method": "mail",
+    "smtp_host": "smtp-mail.outlook.com",
+    "smtp_port": 587,
+    "smtp_secure": 0,
+    "smtp_user": "email@hotmail.com",
+    "smtp_pass": "password",
+    "mail_from": "email@hotmail.com",
+    "mail_to": "your@email.com",
+    "mail_subject": "New MySQL backup!",
+    "mail_text": "Here is your new MySQL backup."
+}
