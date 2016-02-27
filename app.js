@@ -6,21 +6,6 @@ var fs = require('fs');
 var archiver = require('archiver');
 var now = new Date();
 
-if(argv.settings_file){
-    fs.readFile(argv.settings_file, 'utf8', function (err,data) {
-        if(err){
-            console.log(err);
-        }
-        else{
-            var settings = JSON.parse(data);
-            execute(settings);
-        }
-    });
-}
-else{
-    execute(argv);
-}
-
 var execute = function(argv){
     var location = argv.location;
     if(!location){
@@ -97,7 +82,7 @@ var execute = function(argv){
 
 var run_method = function(final_file, method, file_name, argv){
     if(method){
-        var method_path = "./methods/"+method+".js";
+        var method_path = path.join(__dirname, "./methods/"+method+".js");
         fs.stat(method_path, function(err) { 
             if (!err) { 
                 var methodToExecute = require(method_path);
@@ -111,4 +96,19 @@ var run_method = function(final_file, method, file_name, argv){
     else{
         console.log("Backup saved to '"+final_file+"'.");
     }
+}
+
+if(argv.settings_file){
+    fs.readFile(argv.settings_file, 'utf8', function (err,data) {
+        if(err){
+            console.log(err);
+        }
+        else{
+            var settings = JSON.parse(data);
+            execute(settings);
+        }
+    });
+}
+else{
+    execute(argv);
 }
